@@ -111,8 +111,10 @@ var renderNoteList = function(notes) {
 
   for (var i = 0; i < notes.length; i++) {
     var note = notes[i];
+    // console.log(note);
 
     var $li = $("<li class='list-group-item'>").data(note);
+    // console.log($li);
     var $span = $("<span>").text(note.title);
     var $delBtn = $(
       "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
@@ -140,4 +142,6 @@ $noteTitle.on("keyup", handleRenderSaveBtn);
 $noteText.on("keyup", handleRenderSaveBtn);
 
 // Gets and renders the initial list of notes
-getAndRenderNotes();
+$(document).ready(function() {
+  getAndRenderNotes();
+});
